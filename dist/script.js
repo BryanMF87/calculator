@@ -32,6 +32,7 @@ equalsButton.addEventListener('click', () => {
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     currentOperand.append(button.innerText)
+
   })
 })
 
@@ -54,8 +55,8 @@ operationButtons.forEach(button => {
 })
 
 function operate(operator) {
-  let prevOpValue = previousOperand.innerText
-  let currOpValue = currentOperand.innerText
+  let prevOpValue = parseInt(previousOperand.innerText, 10)
+  let currOpValue = parseInt(currentOperand.innerText, 10)
   switch (operator) {
     case '+':
       previousOperand.innerText = prevOpValue + currOpValue

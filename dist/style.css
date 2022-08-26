@@ -67,8 +67,8 @@ button.lighter {
   background: rgba(255, 255, 255, .90);
 }
 
-button:hover.lighter {
-  background: rgba(255, 255, 255, .75);
+button:hover{
+  opacity: .75;
 }
 
 @media only screen and (max-width: 450px) {
