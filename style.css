@@ -9,7 +9,7 @@
 body {
   padding:0%; 
   margin:0%;
-  background: linear-gradient(to bottom, #ffc3a0, #ffafbd)
+  background: darkslategray;
 }
 
 .calculator-grid {
@@ -23,14 +23,17 @@ body {
 
 .calculator-grid > button {
   cursor: pointer;
-  border: 1px solid #fff;
   font-size: 2rem;
   outline: none;
   background: rgba(255, 255, 255, .75);
+  border: 2px solid darkslategray;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.calculator-grid > button:hover {
-  background: rgba(255, 255, 255, .90);
+.calculator-grid > button:active {
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .span-two {
@@ -47,6 +50,7 @@ body {
   flex-direction: column;
   word-wrap: break-word;
   word-break: break-all;
+  border-radius: 5px;
 }
 
 .output .previous-operand {
@@ -63,6 +67,13 @@ button.lighter {
   background: rgba(255, 255, 255, .90);
 }
 
-button:hover.lighter {
-  background: rgba(255, 255, 255, .75);
+button:hover{
+  opacity: .75;
+}
+
+@media only screen and (max-width: 450px) {
+  .calculator-grid {
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 75px); 
+  }
 }
